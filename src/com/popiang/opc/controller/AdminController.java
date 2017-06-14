@@ -22,6 +22,7 @@ import com.popiang.opc.dao.Lead;
 import com.popiang.opc.dao.User;
 import com.popiang.opc.service.LeadsService;
 import com.popiang.opc.service.UsersService;
+import com.popiang.opc.utilities.StringHandler;
 
 /*
  * This controller class handles:
@@ -41,6 +42,10 @@ public class AdminController
 	//linking to LeadsService bean
 	@Autowired
 	private LeadsService leadsService;
+	
+	//linking to StringHandler bean
+	@Autowired
+	private StringHandler stringHandler;
 	
 	//
 	//this method is to trim down string to eliminate empty spaces before 
@@ -200,22 +205,22 @@ public class AdminController
 	@ResponseBody
 	public Map<String, Object> noOfLeads()
 	{
-		List<String> events = usersService.getAllEvents();
+		List<User> users = usersService.getAllCurrentUsers();
 		
 		List<Lead> leads = new ArrayList<>();
 		
 		Map<String, Object> data = new HashMap<String, Object>();
 
-		for(String event : events)
+		for(User user : users)
 		{
-			if(event.equals("admin"))
+			if(user.getEvent().equals("ADMIN"))
 			{
 				continue;
 			}
 			
-			leads = leadsService.getAllLeads(event);
+			leads = leadsService.getAllLeads(user.getEvent());
 
-			data.put(event, leads.size());
+			data.put(user.getUsername(), leads.size());
 		}
 		
 		return data;
