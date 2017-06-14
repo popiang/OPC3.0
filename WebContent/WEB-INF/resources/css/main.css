@@ -1,0 +1,612 @@
+* {
+  margin: 0;
+  padding: 0;
+} 
+
+html, body {
+  height: 100%;
+}
+
+body {
+	background-image: url("background1.png");
+	font-family: Arial;
+}
+
+/******** HEADER ********/
+
+header {
+	width: 100%;
+	color: white;
+	background-color: white;
+	margin-bottom: -60px;
+	height: 60px;
+	position: fixed;
+	overflow: auto;
+}
+
+#logo-container {
+	display: inline-block;
+	position: relative;
+	text-align: left;
+	height: 60px;
+	width: 100%;
+}
+
+#logo1 {
+	display: inline-block;
+	text-decoration: none;
+	color: dimgray;
+	padding-top: 7px;
+}
+
+#logo2 {
+	font-family: 'Orbitron';
+	letter-spacing: 2px;
+	float: right;
+	line-height: 60px;
+	display: inline-block;
+}
+
+#logo2 a {
+	text-decoration: none;
+	color: dimgray;
+}
+
+#logo2:after {
+	clear: both;
+}
+
+
+/* 
+#logo-container a {
+	display: inline-block;
+	margin-top: 5px;
+	line-height: 60px;
+	border: 1px solid red;
+
+}
+ */
+/* #logo-container h1 {
+	font-family: 'Orbitron';
+	margin-top: 0;
+	padding-top: 0;
+	line-height: 60px;
+	letter-spacing: 2px;
+	border: 1px solid green;
+} */
+
+/* #logo1 {
+	display: inline-block;
+} */
+
+/* #logo1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    margin: auto;
+}
+ */
+
+/******** FOOTER ********/
+
+footer {
+	max-width: 90%;
+	position: relative;
+	margin: auto;
+	margin-top: -40px;
+	clear: both;
+	font-size: small;
+	font-weight: bold;
+	text-align: center;	
+	color: white;
+	border-top: 1px dotted white;
+	height: 40px;
+}
+
+footer p {
+	line-height: 40px;
+}
+
+footer a {
+	text-decoration: none;
+	color: lime;
+}
+
+/******** LOGIN BODY ********/
+
+.big-wrapper {
+	min-height: 100%;
+}
+
+.main-body {
+	min-height: 100%;
+	text-align: center;
+	overflow: auto;
+	padding-bottom: 40px;
+}
+
+#big-wrapper {
+	min-height: 100%;
+}
+
+#login-form-wrapper {
+	overflow: auto;
+	padding-bottom: 40px;
+	text-align: center;
+}
+
+#login-head,
+.page-title {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	color: white;
+	font-family: 'Advent Pro';
+	font-size: 35px;
+	font-weight: 100;
+	letter-spacing: 4px;
+}
+
+#login-head {
+	margin-top: 170px;
+	margin-bottom: 15px;
+}
+
+#welcome-head {
+	margin-top: 140px;
+}
+
+.login-form-table {
+	padding: 10px;
+	margin: auto;
+	margin-bottom: 50px;
+	background-color: dimgray;
+	border: none;
+	box-shadow: 1px 1px 10px 1px black;
+}
+
+.login-form-table td, 
+.login-form-table tr {
+	padding: 7px 10px;
+}
+
+.login-field {
+	width: 230px;
+	padding: 9px;
+	border-radius: 3px;
+	border: none;
+	font-size: 15px;
+	letter-spacing: 2px;
+}
+
+.login-button {
+	width: 130px;
+	padding: 10px;
+	border-radius: 10px;
+	border: none;
+	font-family: Arial;
+	letter-spacing: 3px;
+	font-size: 12px;
+	cursor: pointer;
+	transition-duration: 0.4s;
+}
+
+.login-button:hover {
+	color: white;
+	background-color: #555555;
+}
+
+.home-logout-link {
+	margin-top: 70px;
+	text-align: right;
+}
+
+.home-logout-link p {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.home-logout-link a {
+	text-decoration: none;
+	color: lightskyblue;
+	transition-duration: 0.2s;
+}
+
+.home-logout-link .home:hover {
+	color: lime;
+}
+
+.home-logout-link .logout:hover {
+	color: red;
+}
+
+/********LEAD FORM**********/
+
+.lead-form-fieldset {
+	background-color: #fffacd;
+	text-align: left;
+	border-style: none;
+	border-radius: 5px;
+}
+
+.lead-form-table {
+	margin-top: 28px;
+	width: 450px;
+	border-style: none;
+	padding-top: 10px;
+	background-color: gainsboro;
+	font-family: Tahoma;
+	border-collapse: collapse;
+	text-align: left;
+	box-shadow: 1px 1px 10px 2px;
+}
+
+.lead-form-table td,
+.lead-form-table tr {
+	height: 30px;
+	padding: 7px 5px;
+}
+
+.lead-form-title {
+	font-family: "Advent Pro";
+	font-size: 25px;
+	letter-spacing: 2px;
+}
+
+.title-row {
+	background-color: coral;
+	color: white;
+	text-align: center;
+}
+
+.title-row h3 {
+	font-size: xx-large;
+	letter-spacing: 3px;
+	font-weight: 900;
+}
+
+.second-row td {
+	padding-top: 20px;
+}
+
+.rb-label {
+		font-family: 'Open Sans';
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+	padding-right: 7px;
+}
+
+.radio-button {
+	margin-right: 0px;
+}
+
+.label {
+	text-align: right;
+	font-family: 'Open Sans';
+}
+
+.lead-form-big-wrapper {
+	display: flex;
+	min-width: 300px;
+	overflow-x: auto;
+}
+
+.lead-form {
+	margin: -20px auto 20px auto;
+}
+
+.lead-form-field {
+	padding: 7px;
+	border: 1px solid #c0c0c0;
+	border-radius: 5px;
+	background-color: snow;
+	width: 235px;
+	letter-spacing: 1px;
+	margin-left: 5px;
+}
+
+.lead-form-button {
+	padding: 5px 10px;
+	text-align: center;
+	width: 375px;
+	height: 35px;
+	border-radius: 3px;
+	background-color: silver;
+	margin-bottom: 10px;	
+}
+
+.lead-form-button:hover {
+	cursor: pointer;
+}
+
+.last-row {
+	text-align: center;	
+}
+
+.lead-form-legend {
+	text-align: center;
+	padding-bottom: 35px;
+	font-size: 26px;
+	font-family: 'Advent Pro';
+	font-weight: bolder;
+	letter-spacing: 2px;
+	color: red;
+	border: 1px solid green;
+}
+
+.dropdown {
+	width: 215px;
+	height: 39px;
+	margin-left: 5px;
+	letter-spacing: 2px;
+}
+
+.payment-dropdown {
+	margin-left: 5px;
+	padding: 5px;
+	width: 250px;
+	height: 32px;
+	border-radius: 5px;
+}
+
+/******** PDPA ********/
+
+#pdpa-wrapper {
+	font-family: 'Open Sans';
+	max-width: 435px;
+	padding: 30px 30px 10px 30px;
+	border: 2px double silver;
+	margin: auto;
+	background-color: gainsboro;
+	margin-bottom: 20px;
+	text-align: justify;
+	max-height: 600px;
+	overflow: auto;
+	box-shadow: 0px 0px 15px 2px;
+}
+
+#pdpa-wrapper li {
+	margin-left: 17px;
+}
+
+.submit-button-wrapper {
+	text-align: center;
+}
+
+.submit-button-wrapper button{
+	background-color: dimgray;
+}
+
+/********* ADMIN PAGE *********/
+
+
+.table {
+	text-align: left;
+	margin: auto;
+	border: 1px solid white;
+	border-collapse: collapse;
+	background-color: white;
+}
+
+.table td,
+.table th {
+	padding: 15px;
+ 	border: 1px solid silver;
+ 	height: 33px;
+}
+
+.table th {
+	text-align: center;
+	background-color: lightslategray;
+}
+
+.table tr:nth-child(even) {
+	background-color: gainsboro;
+}
+
+#create-user-button {
+	display: inline-block;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	text-decoration: none;
+	color: white;
+	border: 1px solid #4CAF50;
+	padding: 10px 40px;
+	border-radius: 5px;
+	transition-duration: 0.4s;
+}
+
+.action-button {
+	display: inline-block;
+	text-align: center;
+	padding: 5px;
+	text-decoration: none;
+	color: black;
+	background-color: silver;
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 70px;
+	font-size: small;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	transition-duration: 0.2s;
+}
+
+.action-button:hover {
+	background-color: dimgray;
+	color: white;
+}
+
+#create-user-button:hover {
+	background-color: #4CAF50;
+}
+
+#create-user-button:focus {
+	border: 1px solid darkgreen;
+}
+
+/********* CREATE USER PAGE **********/
+
+#create-user-form-table {
+	margin: auto;
+	text-align: left;
+	color: white;
+}
+
+#create-user-form-table tr,
+#create-user-form-table td {
+	padding: 5px 10px;;
+	vertical-align: middle;
+}
+
+.create-user-field {
+	padding: 8px;
+	width: 200px;
+	margin: 3px 0px;
+	border-radius: 3px;
+	border-style: none;
+	letter-spacing: 2px;	
+	transition-duration: 0.2s;
+}
+
+.create-user-field:last-child {
+	width: 215px;
+}
+
+#create-user:hover,
+#edit-user:hover {
+	background-color: dimgray;
+	cursor: pointer;
+}
+
+#cancel-user:hover {
+	background-color: lightcoral;
+	cursor: pointer;
+}
+
+/********** USER HOME ************/
+
+.create-lead-control {
+	display: block;
+	width: 270px;
+	padding: 10px;
+	margin: 5px auto;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+.form-label {
+	padding-top: 7px;
+	vertical-align: top;
+}
+
+.user-home-wrapper a {
+	padding: 10px;
+	text-decoration: none;
+	border: 1px solid #4CAF50;
+	border-radius: 5px;
+	max-width: 250px;
+	display: block;
+	color: white;
+	margin: 10px auto;
+	transition-duration: 0.2s;
+}
+
+.user-home-wrapper a:hover {
+	color: white;
+	background-color: #4CAF50;	
+}
+
+
+/********* LEADS PAGE **********/
+
+.leads-table-wrapper {
+	max-height: 400px;
+	display: inline-block;
+	overflow: auto; 
+	margin-bottom: 40px;
+}
+
+#leads-table {
+	border: 1px solid black;
+	border-collapse: collapse;
+	max-height: 400px;
+}
+
+#leads-table tr, 
+#leads-table td,
+#leads-table th {
+	padding: 10px;
+	border: 1px solid black; 
+}
+
+#enter-admin-button {
+	text-decoration: none;
+	border: 2px solid #4CAF50;
+	padding: 16px 32px;
+	color: white;
+}
+
+#enter-admin-button:hover {
+	color: white;
+	background-color: #4CAF50;
+}
+
+/******** SUCCESSFUL PAGE ********/
+
+.successful {
+	display: block;
+	margin: 80px auto;
+	border: 1px solid lime;
+	background-color: #4CAF50;
+	border-radius: 8px;
+	padding: 20px;
+	text-decoration: none;
+	color: white;
+	font-family: 'Open Sans';
+	max-width: 400px;
+	box-shadow: 1px 1px 10px 1px lightgreen;
+	cursor: pointer;
+	transition-duration: 0.2s;
+}
+
+.successful:hover {
+	color: darkgreen;
+	box-shadow: 1px 1px 10px 1px white;
+}
+
+.successful:active {
+	border: 1px solid darkgreen;
+}
+
+
+/******** ACTION MESSAGE ********/
+
+.action-message {
+	color: limegreen;
+	margin-top: -20px;
+}
+
+/********* ERROR MESSAGE ********/
+
+.error {
+	margin-top: 20px;
+	font-size: small;
+	color: red;
+}
+
+.lead-form-error {
+	padding-left: 6px;
+}
+
+#login-error {
+	margin-top: -20px;
+}
+
+/********* LOGOUT LINK ********/
+
+#form {
+	display: none;	
+}
+
