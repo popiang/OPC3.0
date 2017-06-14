@@ -76,4 +76,11 @@ public class UsersService
 	{
 		return usersDao.eventExist(event);
 	}
+
+	//this method return all event's names
+	@Transactional
+	public List<String> getAllEvents()
+	{
+		return usersDao.getAllEvents();
+	}
 }

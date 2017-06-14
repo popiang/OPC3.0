@@ -46,6 +46,8 @@
 			access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/edituser"
 			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/noofleads"
+			access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/static/**"
 			access="permitAll" />
 		<security:intercept-url pattern="/**" access="denyAll" />

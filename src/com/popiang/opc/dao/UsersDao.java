@@ -116,4 +116,14 @@ public class UsersDao
 		
 		return users.size() > 0;
 	}
+
+	//this method returns all event's names
+	public List<String> getAllEvents() 
+	{
+		Session session = factory.getCurrentSession();
+
+		List<String> events = session.createQuery("select event from User", String.class).getResultList();
+		
+		return events;
+	}
 }

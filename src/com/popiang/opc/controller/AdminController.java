@@ -1,6 +1,9 @@
 package com.popiang.opc.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -13,8 +16,11 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.popiang.opc.dao.Lead;
 import com.popiang.opc.dao.User;
+import com.popiang.opc.service.LeadsService;
 import com.popiang.opc.service.UsersService;
 
 /*
@@ -31,6 +37,10 @@ public class AdminController
 	//linking to UsersService bean
 	@Autowired
 	private UsersService usersService;
+	
+	//linking to LeadsService bean
+	@Autowired
+	private LeadsService leadsService;
 	
 	//
 	//this method is to trim down string to eliminate empty spaces before 
@@ -181,6 +191,34 @@ public class AdminController
 		
 		//redirect to admin page to display all updated users
 		return "redirect:/adminpage?action=deleteuser";
+	}
+	
+	//
+	//this method retrieve data from server using ajax into json data format
+	//
+	@RequestMapping(value="/noofleads", produces="application/json")
+	@ResponseBody
+	public Map<String, Object> noOfLeads()
+	{
+		List<String> events = usersService.getAllEvents();
+		
+		List<Lead> leads = new ArrayList<>();
+		
+		Map<String, Object> data = new HashMap<String, Object>();
+
+		for(String event : events)
+		{
+			if(event.equals("admin"))
+			{
+				continue;
+			}
+			
+			leads = leadsService.getAllLeads(event);
+
+			data.put(event, leads.size());
+		}
+		
+		return data;
 	}
 }
 
