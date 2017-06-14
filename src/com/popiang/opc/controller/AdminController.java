@@ -22,7 +22,6 @@ import com.popiang.opc.dao.Lead;
 import com.popiang.opc.dao.User;
 import com.popiang.opc.service.LeadsService;
 import com.popiang.opc.service.UsersService;
-import com.popiang.opc.utilities.StringHandler;
 
 /*
  * This controller class handles:
@@ -42,10 +41,6 @@ public class AdminController
 	//linking to LeadsService bean
 	@Autowired
 	private LeadsService leadsService;
-	
-	//linking to StringHandler bean
-	@Autowired
-	private StringHandler stringHandler;
 	
 	//
 	//this method is to trim down string to eliminate empty spaces before 
