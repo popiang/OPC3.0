@@ -14,7 +14,6 @@ import com.popiang.opc.dao.Lead;
 import com.popiang.opc.dao.User;
 import com.popiang.opc.service.LeadsService;
 import com.popiang.opc.service.UsersService;
-import com.popiang.opc.utilities.Concatenation;
 import com.popiang.opc.utilities.EmailSender;
 import com.popiang.opc.utilities.ExcelCreator;
 
@@ -44,10 +43,6 @@ public class ExportController
 	@Autowired
 	private UsersService usersService;
 	
-	//linking to Concatenation bean
-	@Autowired
-	private Concatenation concatenate;
-	
 	//
 	//this method retrieves to be exported leads, convert it to excel format and email it
 	//
@@ -61,10 +56,10 @@ public class ExportController
 		//convert retrieved leads to excel format using method from ExcelCreator class
 		//and save it in certain filePath
 		//
-		String filePath = excelCreator.createExcel(leads, context, concatenate.removeUnderscore(event));
+		String filePath = excelCreator.createExcel(leads, context, event);
 
 		//sends the created excel file using method from EmailSender class to admin email account
-		emailSender.emailFile(context, concatenate.removeUnderscore(event), filePath);
+		emailSender.emailFile(context, event, filePath);
 		
 		List<User> users = usersService.getAllCurrentUsers();
 		

@@ -50,7 +50,7 @@
 						<td>${user.username}</td>
 						<td>${user.authority}</td>
 						<td>${user.event}</td>
-						<td><span id="${user.event}">0</span></td>
+						<td style="text-align: center;"><span id="${user.event}">-</span></td>
 						<td>
 							<a class="action-button" href="${pageContext.request.contextPath}/edituser?id=${user.id}">Edit</a>
 							<c:if test="${user.authority == 'ROLE_USER'}">

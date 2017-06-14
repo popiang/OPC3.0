@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.popiang.opc.dao.Lead;
 import com.popiang.opc.dao.User;
 import com.popiang.opc.service.UsersService;
-import com.popiang.opc.utilities.Concatenation;
 
 /*
  * This class handles displaying home page of the website
@@ -25,12 +24,8 @@ public class HomeController
 	@Autowired
 	private UsersService usersService;
 	
-	//linking to Concatenation bean
-	@Autowired
-	private Concatenation concatenate;
-	
 	//
-	//this method display to home page
+	//this method display the home page
 	//
 	/*@RequestMapping(value={"/", "/favicon.ico"})*/
 	@RequestMapping("/")
@@ -39,7 +34,7 @@ public class HomeController
 		String username = principal.getName();
 		String event = usersService.getEventName(username); 
 		
-		model.addAttribute("event", concatenate.removeUnderscore(event));
+		model.addAttribute("event", event);
 
 		//
 		//this lead object is used if the account logged in is user account
