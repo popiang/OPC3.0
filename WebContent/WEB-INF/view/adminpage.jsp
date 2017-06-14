@@ -40,6 +40,7 @@
 					<th>Username</th>
 					<th>Authority</th>
 					<th>Event</th>
+					<th>No Of Leads</th>
 					<th>Action</th>
 				</tr>
 				
@@ -49,6 +50,7 @@
 						<td>${user.username}</td>
 						<td>${user.authority}</td>
 						<td>${user.event}</td>
+						<td><span id="${user.event}">0</span></td>
 						<td>
 							<a class="action-button" href="${pageContext.request.contextPath}/edituser?id=${user.id}">Edit</a>
 							<c:if test="${user.authority == 'ROLE_USER'}">
@@ -96,6 +98,7 @@
 	</footer>
 	
 	<script type="text/javascript">
+	
 	
 		function logout()
 		{
