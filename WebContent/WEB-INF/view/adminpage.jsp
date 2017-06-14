@@ -93,12 +93,34 @@
 	
 	</div>
 	
+	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-3.2.1.js"></script>
+	
 	<footer>
 		<p>Copyright &#169; <a href="http://www.ghhs.com.my">Golden Horse Health Sanctuary</a></p>
 	</footer>
 	
 	<script type="text/javascript">
 	
+		function updateNoOfLeads(data)
+		{
+			for(var key in data)
+			{
+				$("#" + key).text(data[key]);				
+			}
+		}
+	
+		function updatePage()
+		{
+			$.getJSON("${pageContext.request.contextPath}/noofleads", updateNoOfLeads);
+		}
+	
+		function onLoad()
+		{
+			updatePage();
+			window.setInterval(updatePage, 5000);
+		}
+	
+		$(document).ready(onLoad);
 	
 		function logout()
 		{
