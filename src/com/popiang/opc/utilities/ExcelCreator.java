@@ -136,7 +136,7 @@ public class ExcelCreator
 				cellLeadsDate.setCellValue(lead.getDate());
 				
 				//CELL LEAD'S EVENT
-				Cell cellEvent = row.createCell(12);
+				Cell cellEvent = row.createCell(13);
 				cellEvent.setCellValue(lead.getEventName());
 				
 				r++;
@@ -164,16 +164,13 @@ public class ExcelCreator
 			File file = new File(context.getServletContext().getRealPath("/WEB-INF/leads.xls"));
 			
 			filePath = file.getAbsolutePath();
-			System.out.println("filepath: " + filePath);
 			FileOutputStream out = new FileOutputStream( file );
 			workbook.write(out);
 			out.close();
 			workbook.close();
-			System.out.println("Excel file created succesfully!!");
 		}
 		catch (IOException e) 
 		{
-			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 		
